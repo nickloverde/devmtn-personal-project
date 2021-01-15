@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #142680;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.header nav li {
+  padding: 15px;
+}
+
+.btn-subscribe, .btn-footer, .btn-dropdown {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+}
+
+.btn-subscribe {
+  background-color: #142680;
+  color: white;
+}
+
+.btn-subscribe:hover {
+  background-color: #3c4faf;
+}
+
+.btn-footer {
+  background-color: white;
+  color: #142680;
+}
+
+.btn-footer:hover {
+  background-color: #142680;
+  color: white;
+}
+
+.btn-dropdown {
+  background-color: white;
+  color: #383f44;
+}
+
+.btn-dropdown:hover {
+  background-color: #dddcdc;
+}
+/*# sourceMappingURL=style.css.map */

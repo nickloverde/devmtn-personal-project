@@ -1,0 +1,37 @@
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+}
+
+.btn-subscribe {
+  @extend %btn;
+  background-color: $secondary-color;
+  color: white;
+
+  &:hover {
+    background-color: $third-color;
+  }
+}
+
+.btn-footer {
+  @extend %btn;
+  background-color: white;
+  color: $secondary-color;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+  }
+}
+
+.btn-dropdown {
+  @extend %btn;
+  background-color: white;
+  color: $footer-color;
+
+  &:hover {
+    background-color: rgb(221, 220, 220);
+  }
+}
