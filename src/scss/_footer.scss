@@ -1,0 +1,19 @@
+.footer-container {
+  display: flex;
+  color: white;
+  background-color: $footer-color;
+  padding: 15px;
+  border-bottom: 1px solid $border-color;
+}
+
+.footer-text {
+  width: 30vw;
+  margin: 10px;
+  padding: 10px;
+}
+
+.footer-quote {
+  font-style: italic;
+  display: flex;
+  align-items: center;
+}

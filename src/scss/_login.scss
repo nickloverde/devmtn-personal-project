@@ -1,0 +1,29 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  width: 50vw;
+  height: 400px;
+  background-color: $register-background-color;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.no-account {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top: 1px solid $border-color;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-login-email {
+  height: 40px;
+}

@@ -10,23 +10,10 @@ a {
   color: $secondary-color;
 }
 
-.header {
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-      list-style-type: none;
-    }
-
-    li {
-      padding: 15px;
-    }
-  }
-}
-
 @import "buttons";
 @import "mobile";
 @import "header";
+@import "preview";
+@import "footer";
+@import "register";
+@import "login";

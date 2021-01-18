@@ -3,6 +3,10 @@
   border-radius: 5px;
   padding: 8px 20px;
   margin: 3px;
+  border: none;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
 }
 
 .btn-subscribe {
@@ -13,6 +17,15 @@
   &:hover {
     background-color: $third-color;
   }
+}
+
+.btn-create-account {
+  @extend %btn;
+  display: inline-block;
+  width: 150px;
+  background-color: $third-color;
+  color: white;
+  border-radius: 2px;
 }
 
 .btn-footer {
@@ -33,5 +46,16 @@
 
   &:hover {
     background-color: rgb(221, 220, 220);
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+
+  .sign-in {
+    border-left: solid 1px $border-color;
+    padding: 15px;
+    margin-left: 15px;
   }
 }

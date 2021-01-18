@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -20,45 +21,62 @@ const Register = (props) => {
 
 
     return (
-        <div>
+        <div className='register'>
             <h1>Create your account</h1>
-           <form>
-               <input
-                type='text'
-                placeholder='email'
-                onChange={e => setEmail(e.target.value)}
-               />
+            <p>Enter your details here to subscribe</p>
 
-               <input
-                type='password'
-                placeholder='password'
-                onChange={e => setPassword(e.target.value)}/>
+            <div className='form'>
+                <form>
+                    <p>Email</p>
+                    <input
+                        type='text'
+                        className ='register-input'
+                        placeholder='email'
+                        onChange={e => setEmail(e.target.value)}
+                    />
 
-               <input
-                type='text'
-                placeholder='first name'
-                onChange={e => setFirstName(e.target.value)}/>
+                    <p>Password</p>
+                    <input
+                        type='password'
+                        className ='register-input'
+                        placeholder='password'
+                        onChange={e => setPassword(e.target.value)}/>
 
-               <input
-                type='text'
-                placeholder='last name'
-                onChange={e => setLastName(e.target.value)}/>
+                    <p>First Name</p>
+                    <input
+                        type='text'
+                        className ='register-input'
+                        placeholder='first name'
+                        onChange={e => setFirstName(e.target.value)}/>
 
-            </form> 
+                    <p>Last Name</p>
+                    <input
+                        type='text'
+                        className ='register-input'
+                        placeholder='last name'
+                        onChange={e => setLastName(e.target.value)}/>
 
-            <div>
-                <p>By creating an account, you agree to our terms and conditions and acknlowedge our privacy policy</p>
-            </div>
+                </form> 
 
-            <div>
-            <button
-               type='button'
-               onClick = {register}
-               >Create Account</button>
-            </div>
+                    <div className='terms'>
+                        <p>By creating an account, you agree to our terms and conditions and acknlowedge our privacy policy</p>
+                    </div>
 
-            <div>
-                <p>Already have an account? Log In</p>
+                    <div className='create'>
+                    <button
+                    type='button'
+                    className="btn-create-account"
+                    onClick = {register}
+                    >Create Account</button>
+                    </div>
+
+                    <div className='already-account'>
+                        <p>Already have an account? </p>
+                        <Link to='/login'>
+                            <p>Log In</p>
+                        </Link>
+                    </div>
+
             </div>
 
         </div>

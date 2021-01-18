@@ -23,31 +23,35 @@ const Login = (props) => {
 
 
     return (
-        <div>
-            <h1>Login with The Economist</h1>
-            <form>
+        <div className='login-page'>
+            <h1>Log in with The Economist</h1>
+            <form className='login-form'>
+                <p>Email address</p>
                 <input
+                className='input-login-email'
                 type='text'
                 placeholder='email'
                 onChange={(e) => setEmail(e.target.value)}
                 />
 
+                <p>Password</p>
                 <input
+                className='input-login-email'
                 type='password'
                 placeholder='password'
                 onChange={(e) => setPassword(e.target.value)}
                 />
-            </form>
-
-            <button
+            <button className='btn-create-account'
             type='button'
             onClick={login}>
                 Login
             </button>
 
-            <div>
+            <div className='no-account'>
                 <p>Don’t have an account? <Link to= '/register'>Register now</Link></p>
             </div>
+            </form>
+
             
         </div>
     )

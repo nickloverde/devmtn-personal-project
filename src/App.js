@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header/>
       {routes}
-      <SubscribeAd/>
+      {/* <SubscribeAd/> */}
       <Footer/>
 
     </div>

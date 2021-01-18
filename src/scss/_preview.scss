@@ -1,0 +1,66 @@
+.home {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.preview {
+  border-top: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.top-stories {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.category {
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.art-display {
+  display: flex;
+}
+
+.headline {
+}
+
+.img-main {
+  display: flex;
+  height: 440px;
+  width: 800px;
+  margin-left: 20px;
+}
+
+.img-sub {
+  height: 220px;
+  width: 400px;
+}
+
+.title {
+  border-top: 1px solid black;
+}
+
+.tech-section {
+  display: flex;
+}
+
+.toparticle {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  border-right: 1px solid $border-color;
+  padding: 15px;
+}
+
+.subarticle {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 0;
+  padding: 15px;
+}
+
+.subarticle {
+}

@@ -5,6 +5,7 @@ import Comments from '../Comments/Comments'
 const Article = (props) => {
     const { article_id } = props.match.params
     const [article, setArticle] = useState({})
+    const [newComment, setNewComment] = useState('')
 
     useEffect(() => {
         axios
@@ -14,12 +15,15 @@ const Article = (props) => {
         })
     }, [])
 
+
     return (
         <div>
             <img src = {article.image}/>
             <h1>{article.category}</h1>
-            <h2>{article.content}</h2>
+            <h2>{article.headline}</h2>
+            <p>{article.content}</p>
         <Comments articleId = {article_id} />
+        
         </div>
     )
 }

@@ -1,0 +1,45 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.form {
+  width: 50vw;
+  height: 700px;
+  background-color: $register-background-color;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  margin: 20px;
+  padding: 30px;
+}
+
+.register-input {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.already-account {
+  display: flex;
+  justify-content: center;
+}
+
+.terms {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  padding: 20px;
+}
+
+.create {
+  padding: 20px;
+  border-bottom: 1px solid $border-color;
+}
+
+.already-account {
+  display: flex;
+  margin-top: 15px;
+}
