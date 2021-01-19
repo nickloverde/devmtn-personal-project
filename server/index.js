@@ -46,7 +46,7 @@ app.post('/send', nodeCtrl.mailer)
 app.use(express.static(`${__dirname}/../build`))
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'))
-})
+  })
 
 
 //connecting massive and setting up server port
