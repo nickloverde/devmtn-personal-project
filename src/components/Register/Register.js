@@ -15,7 +15,7 @@ const Register = (props) => {
         .post('/auth/register', {email, password, first_name:firstName, last_name: lastName})
         .then(() => {
             //send information about them to redux and then send them home
-            props.history.push('/home')})
+            props.history.push('/')})
         .catch((err)=> alert('That email is already taken. Please login or choose a different email'))
     }
 
@@ -64,7 +64,7 @@ const Register = (props) => {
 
                     <div className='create'>
                     <button
-                    type='button'
+                    type='submit'
                     className="btn-create-account"
                     onClick = {register}
                     >Create Account</button>

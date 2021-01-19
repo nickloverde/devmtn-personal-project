@@ -19,15 +19,15 @@ module.exports = {
         const db = req.app.get('db')
 
         // //Check subscriber logged in (use .catch in axios to tell user to subscribe)
-        // if (!req.session.subscriber){
-        //     return res.status(403).send('Please login to comment')
-        // }
+        if (!req.session.subscriber){
+            return res.status(403).send('Please login to comment')
+        }
 
         //destructure newComment from the body
         const { newComment } = req.body
 
         //insert newComment into comments table
-        const comments = await db.insert_comments([6, req.params.article_id, newComment])
+        const comments = await db.insert_comments([req.session.subscriber.subscriber_id, req.params.article_id, newComment])
         
        //display new comment with all the comments
         res.status(200).send(comments)
@@ -38,9 +38,9 @@ module.exports = {
         const db = req.app.get('db')
 
         //check subscriber logged in (use .catch in axios to tell user to subscribe)
-        // if (!req.session.subscriber){
-        //     return res.status(403).send('Please login to edit comments')
-        // }
+        if (!req.session.subscriber){
+            return res.status(403).send('Please login to edit comments')
+        }
 
         //destructure comment id from params
         const {comment_id} = req.params

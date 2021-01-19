@@ -50,7 +50,7 @@ module.exports = {
             from: 'nick.loverde@gmail.com',
             to: email,
             subject: 'Thank you for subscribing to the Economist Clone',
-            text: 'It works'
+            text: 'Welcome to your Economist subscription. As a subscriber you have full access to all of the Economist articles including our decades-long archives. If you have any questions please contact us. Thank you.'
         }
 
         //send email with defined transport object

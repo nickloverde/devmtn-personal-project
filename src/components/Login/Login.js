@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {loginSubscriber} from '../../redux/subscriberReducer'
+import {connect} from 'react-redux'
 
 const Login = (props) => {
     const [email, setEmail] = useState('')
@@ -10,15 +12,12 @@ const Login = (props) => {
         e.preventDefault()
 
         axios
-        .post('/auth/signin', {email, password})
+        .post('/auth/login', {email, password})
         .then((res) => {
-            // props.getSubscriberData(res.data)
-            // setEmail(res.data)
-            // setPassword(res.data)
+            props.loginSubscriber(res.data.first_name)
+            props.history.push('/')
         })
         .catch(err => console.log(err))
-
-        // if (props.subscriber.isLoggedIn) props.history.push('/home')
     }
 
 
@@ -41,8 +40,9 @@ const Login = (props) => {
                 placeholder='password'
                 onChange={(e) => setPassword(e.target.value)}
                 />
+   
             <button className='btn-create-account'
-            type='button'
+            type='submit'
             onClick={login}>
                 Login
             </button>
@@ -57,4 +57,8 @@ const Login = (props) => {
     )
 }
 
-export default Login
+function mapStateToProps(reduxState){
+    return reduxState
+}
+
+export default connect(mapStateToProps, {loginSubscriber})(Login)

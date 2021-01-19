@@ -18,10 +18,26 @@ const Article = (props) => {
 
     return (
         <div>
-            <img src = {article.image}/>
-            <h1>{article.category}</h1>
-            <h2>{article.headline}</h2>
+            <div className='article-top-bar'>
+                <div className='article-category'>
+                    <h2>{article.category}</h2>
+                </div>
+
+                <div className='article-top-data'>
+                    <h5 className='article-subhead'>{article.subhead}</h5>
+                    <h1>{article.headline}</h1>
+                    <h2>{article.summary}</h2>
+                </div>
+
+            </div>
+            <div className='article-img-container'>
+                <img className='article-img' src = {article.image}/>
+            </div>
+
+            <div className='article-content'>
             <p>{article.content}</p>
+            </div>
+
         <Comments articleId = {article_id} />
         
         </div>

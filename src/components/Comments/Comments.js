@@ -26,6 +26,7 @@ const Comments = (props) => {
         .then (res => {
             getComments()
         })
+        .catch(err => alert('Please login to add comments. Thank you.'))
     }
     
     const updateComment = (commentId, updateCommentStr) => {
@@ -61,11 +62,18 @@ const Comments = (props) => {
     })
 
     return (
-        <div>
+        <div className='comments'>
+            <div className='add-comment'>
+                <h5>Please leave your comments here. Remember to be respectful to other subscribers.</h5>
+            </div>
+
             <input
+            className='input-comment'
             value={newComment}
             onChange={e => setNewComment(e.target.value)}/>
             <button
+            type="reset" value="Reset"
+            className='btn-create-account'
             onClick = {addComment}>Add</button>
           {mappedComments}
         </div>

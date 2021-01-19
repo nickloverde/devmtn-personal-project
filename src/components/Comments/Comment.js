@@ -4,32 +4,36 @@ import {withRouter} from 'react-router-dom'
 const Comment = (props) => {
     const {comment} = props
     const [body, setBody] = useState('')
-    const [editToggle, setEditToggle] = useState(false)
+    // const [editToggle, setEditToggle] = useState(false)
 
     return (
-        <div>
-            <h3>{comment.author_id}</h3>
-            <p>{comment.body}</p>
+        <div className='comment'>
+            <div className='comment-author'>
+                <h5>{comment.first_name, comment.last_name}</h5>
+            </div>
 
-        <div>
-            
-            <p>{!editToggle}</p>
+            <div className='comment-update'>
+                <div className='comment-author'>
+                    <p>{comment.body}</p>
+                </div>
 
-            ?
 
-            <input
-            value={body}
-            onChange={e => setBody(e.target.value)}/>
+                <div>
+                <input
+                value={body}
+                onChange={e => setBody(e.target.value)}/>
+                <button
+                className="btn-create-account"
+                onClick = {() => props.updateComment(comment.comments_id, body)}>Update
+                </button>
 
-            <button
-            onClick = {() => props.updateComment(comment.comments_id, body)}>Update
-            </button>
-            :
-            <p>{body}</p>
-        </div>
 
-        <button
-        onClick = {() => props.deleteComment(comment.comments_id)}>Delete</button>
+                <button
+                className="btn-create-account"
+                onClick = {() => props.deleteComment(comment.comments_id)}>Delete</button>
+                </div>
+            </div>
+
         </div>
     )
 }

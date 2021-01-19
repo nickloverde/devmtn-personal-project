@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import read from './read.png'
 
 const Home = (props) => {
     const [articles, setArticles] = useState([])
@@ -15,16 +16,16 @@ const Home = (props) => {
             setArticles(res.data)
 
             //make techArticles into an array of objects where all 
-            const techArticles = res.data.filter((article)=>{
+            let techArticles = res.data.filter((article)=>{
                 return article.category === 'Technology'
             })
             setTechnology(techArticles)
 
-            let drArticles = res.data.filter((article)=>{
-                return article.category === 'Dr'
-            })
-            // drArticles = drArticles.splice(0, 1)
-            setDr(drArticles)
+            // let drArticles = res.data.filter((article)=>{
+            //     return article.category === 'Dr'
+            // })
+            // // drArticles = drArticles.splice(0, 1)
+            // setDr(drArticles)
 
             //ms articles
             //make techArticles into an array of objects where all 
@@ -40,7 +41,7 @@ const Home = (props) => {
 
     return (
         <div>
-            {articles.map((article) => {
+            {articles.slice(0,1).map((article) => {
 
                 return (
                     <div className='home'>
@@ -51,7 +52,7 @@ const Home = (props) => {
 
                             <div className='category'><p>{article.category}</p></div>
 
-                            <Link key={article.article_id} to={`/article/${article.article_id}`}>
+                            <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                 <div className='art-display'>
                                 
                                     <div>
@@ -86,9 +87,9 @@ const Home = (props) => {
                 })}
             </div> */}
             
-            <h1 className = 'title'>Dr Articles</h1>
+            <h1 className = 'title'>Technology</h1>
             <div className='tech-section'>
-                {dr.map((article, i) => {
+                {technology.map((article, i) => {
                     let articleCSS = ''
                     if(i === 0){
                         articleCSS = 'toparticle' //need toparticle class in css
@@ -98,10 +99,10 @@ const Home = (props) => {
                     return (
                         <div className = {articleCSS}>
                             <div>
-                                <Link key={article.article_id} to={`/article/${article.article_id}`}>
+                                <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
-                                    <div>{article.headline}</div>
+                                    <div className='headline'>{article.headline}</div>
                                     <div>{article.summary}</div>
                                 </Link>
                             </div>
@@ -122,7 +123,7 @@ const Home = (props) => {
                     return (
                         <div className = {articleCSS}>
                             <div>
-                                <Link key={article.article_id} to={`/article/${article.article_id}`}>
+                                <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
                                     <div>{article.headline}</div>
@@ -132,6 +133,10 @@ const Home = (props) => {
                         </div>
                     )
                 })}
+            </div>
+
+            <div>
+               <img src={read} className='banner-img'/>
             </div>
         </div>
     )

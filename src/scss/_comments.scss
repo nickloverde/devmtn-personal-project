@@ -1,0 +1,32 @@
+.comments {
+  margin-left: 40px;
+  padding: 15px;
+  width: 90%;
+}
+
+.comment {
+  background-color: $register-background-color;
+}
+
+.input-comment {
+  width: 400px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.add-comment {
+  margin-bottom: 10px;
+}
+
+.comment-author {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.comment-update {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  padding: 15px;
+}

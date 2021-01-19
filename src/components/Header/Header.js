@@ -1,11 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import logo from './economist-logo.png' 
 import menu from './hamburger-menu.png'
 
 
 
-export default function Header() {
+function Header(props) {
+
+    //logout function
+
+
     return (
         <div className='header'>
             <div>
@@ -19,18 +24,29 @@ export default function Header() {
                     <h1 className='li'>Menu</h1>
                 </div>
 
+
                 <div className='login'>
                     <Link to='/subscribe'>
                     <button className='btn-subscribe'>Subscribe</button>
                     </Link>
 
+                <h1>{props.first_name}</h1>
+
                     <Link to='/login'>
-                    <p className='sign-in'>
-                        Sign In
-                    </p>
+                        {props.isLoggedIn && <Link to="/">Logout</Link>}
+                        <p className='sign-in'>
+                            Sign In
+                        </p>
                     </Link>
                 </div>
             </nav>
         </div>
     )
 }
+
+function mapStateToProps(reduxState){
+    return reduxState
+}
+
+export default connect(mapStateToProps)(Header)
+ 
