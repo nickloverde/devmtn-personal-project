@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
-// const path = require('path')
+const path = require('path')
 const authCtrl = require('./controllers/authController')
 const comCtrl = require('./controllers/comController')
 const artCtrl = require('./controllers/artController')
@@ -43,7 +43,11 @@ app.get('/api/articles/:article_id', artCtrl.getSpecificArticle)
 app.post('/send', nodeCtrl.mailer)
 
 // //static folder
-// app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../build/index.html'))
+})
+
 
 //connecting massive and setting up server port
 massive({
