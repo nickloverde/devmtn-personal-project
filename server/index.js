@@ -42,10 +42,10 @@ app.get('/api/articles/:article_id', artCtrl.getSpecificArticle)
 //nodemailer endpoints
 app.post('/send', nodeCtrl.mailer)
 
-// //static folder
-app.use(express.static(__dirname + '/../build'))
+//static folder
+app.use(express.static(`${__dirname}/../build`))
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../build/index.html'))
+    res.sendFile(path.join(__dirname, '../build/index.html'))
 })
 
 

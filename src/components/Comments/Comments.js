@@ -25,6 +25,7 @@ const Comments = (props) => {
         .post(`/api/comments/${props.articleId}`, {newComment: newComment})
         .then (res => {
             getComments()
+            setNewComment('')
         })
         .catch(err => alert('Please login to add comments. Thank you.'))
     }

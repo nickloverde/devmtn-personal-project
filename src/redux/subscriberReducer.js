@@ -2,6 +2,7 @@
 const initialState = {
     first_name: '',
     isLoggedIn: false
+    //add subscriber_id
 }
 
 //action constants

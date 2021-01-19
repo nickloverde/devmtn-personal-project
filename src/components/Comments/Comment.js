@@ -6,6 +6,8 @@ const Comment = (props) => {
     const [body, setBody] = useState('')
     // const [editToggle, setEditToggle] = useState(false)
 
+    //create ternary if id's match show buttons if now don't show it
+
     return (
         <div className='comment'>
             <div className='comment-author'>
