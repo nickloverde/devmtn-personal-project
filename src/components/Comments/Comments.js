@@ -36,6 +36,7 @@ const Comments = (props) => {
         .then (res => {
             getComments()
         })
+        .catch(err => console.log(err))
     }
 
     const deleteComment = (commentId) => {
@@ -44,6 +45,7 @@ const Comments = (props) => {
         .then (res => {
             getComments()
         })
+        .catch(err => console.log(err))
     }
 
 

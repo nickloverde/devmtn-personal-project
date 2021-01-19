@@ -17,6 +17,7 @@ const Header = (props) => {
             //send information about them to redux and then send them home
             props.logout()
             props.history.push('/')})
+            .catch((err)=> console.log(err))
     }
 
 

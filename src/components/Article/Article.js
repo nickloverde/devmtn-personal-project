@@ -13,6 +13,7 @@ const Article = (props) => {
         .then((res) => {
             setArticle(res.data)
         })
+        .catch(err => console.log(err))
     }, [])
 
 
