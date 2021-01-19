@@ -8,7 +8,10 @@ import menu from './hamburger-menu.png'
 
 function Header(props) {
 
-    //logout function
+    // logout() {
+    //     axios.get('/auth/logout');
+    //     this.setState({ loggedInUser: {} });
+    //   }
 
 
     return (
