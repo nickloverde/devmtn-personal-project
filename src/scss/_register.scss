@@ -1,3 +1,9 @@
+.register-container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
 .register {
   display: flex;
   flex-direction: column;
@@ -42,4 +48,13 @@
 .already-account {
   display: flex;
   margin-top: 15px;
+}
+
+.regimg-container {
+  margin: 30px;
+}
+
+.register-img {
+  width: 600px;
+  height: 400px;
 }

@@ -6,8 +6,7 @@ import read from './read.png'
 const Home = (props) => {
     const [articles, setArticles] = useState([])
     const [technology, setTechnology] = useState ([])
-    const [dr, setDr] = useState([])
-    const [ms, setMs] = useState ([])
+    const [lifeStyle, setLifeStyle] = useState ([])
 
     useEffect(()=> {
         axios
@@ -21,20 +20,12 @@ const Home = (props) => {
             })
             setTechnology(techArticles)
 
-            // let drArticles = res.data.filter((article)=>{
-            //     return article.category === 'Dr'
-            // })
-            // // drArticles = drArticles.splice(0, 1)
-            // setDr(drArticles)
-
             //ms articles
             //make techArticles into an array of objects where all 
-            let msArticles = res.data.filter((article)=>{
-                return article.category === 'Ms'
+            let lifeArticles = res.data.filter((article)=>{
+                return article.category === 'Lifestyle'
             })
-            setMs(msArticles)
-
-
+            setLifeStyle(lifeArticles)
         })
         .catch(err => console.log(err))
 
@@ -43,7 +34,6 @@ const Home = (props) => {
     return (
         <div>
             {articles.slice(0,1).map((article) => {
-
                 return (
                     <div className='home'>
                         <div className='preview'>
@@ -56,7 +46,7 @@ const Home = (props) => {
                             <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                 <div className='art-display'>
                                 
-                                    <div>
+                                    <div className='media-preview'>
                                     <div className='headline'><h1>{article.headline}</h1></div>
                                     <div>{article.summary}</div>
                                     </div>
@@ -72,27 +62,12 @@ const Home = (props) => {
                 )
             })}
 
-            {/* <div>
-                <h1>Tech Articles</h1>
-                {technology.map((article) => {
-                    return (
-                        <div>
-                            <Link key={article.article_id} to={`/article/${article.article_id}`}>
-                                <div className='category'>{article.category}</div>
-                                <div><h1>{article.headline}</h1></div>
-                                <div>{article.summary}</div>
-                                <img src={article.image}/>
-                            </Link>
-                        </div>
-                    )
-                })}
-            </div> */}
             
             <h1 className = 'title'>Technology</h1>
             <div className='tech-section'>
                 {technology.map((article, i) => {
                     let articleCSS = ''
-                    if(i === 0){
+                    if(i < 0){
                         articleCSS = 'toparticle' //need toparticle class in css
                     } else {
                         articleCSS = 'subarticle'
@@ -104,7 +79,7 @@ const Home = (props) => {
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
                                     <div className='headline'>{article.headline}</div>
-                                    <div>{article.summary}</div>
+                                    {/* <div>{article.summary}</div> */}
                                 </Link>
                             </div>
                         </div>
@@ -112,12 +87,40 @@ const Home = (props) => {
                 })}
             </div>
 
-            <h1 className = 'title'>Ms</h1>
+            <div className='banner-container'>
+               <img src={read} className='banner-img'/>
+            </div>
+
+            <h1 className = 'title'>Lifestyle</h1>
+
             <div className='tech-section'>
-                {ms.slice(0,3).map((article, i) => {
+                {lifeStyle.map((article, i) => {
+                    let articleCSS = ''
+                    if(i < 0){
+                        articleCSS = 'toparticle'
+                    } else {
+                        articleCSS = 'subarticle'
+                    }
+                    return (
+                        <div className = {articleCSS}>
+                            <div>
+                                <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
+                                    <img className= 'img-sub' src={article.image}/>
+                                    <div className='category'>{article.category}</div>
+                                    <div className='headline'>{article.headline}</div>
+                                    {/* <div>{article.summary}</div> */}
+                                </Link>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
+            {/* <div className='tech-section'>
+                {lifeStyle.slice(0,3).map((article, i) => {
                     let articleCSS = ''
                     if(i < 3){
-                        articleCSS = 'toparticle' //need toparticle class in css
+                        articleCSS = 'toparticle'
                     } else {
                         articleCSS = 'subarticle'
                     }
@@ -134,11 +137,8 @@ const Home = (props) => {
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
 
-            <div>
-               <img src={read} className='banner-img'/>
-            </div>
         </div>
     )
 }

@@ -27,7 +27,7 @@ const Article = (props) => {
                 <div className='article-top-data'>
                     <h5 className='article-subhead'>{article.subhead}</h5>
                     <h1>{article.headline}</h1>
-                    <h2>{article.summary}</h2>
+                    <h5 className='content-text'>{article.summary}</h5>
                 </div>
 
             </div>
@@ -36,7 +36,7 @@ const Article = (props) => {
             </div>
 
             <div className='article-content'>
-            <p>{article.content}</p>
+            <p className='content-text'>{article.content}</p>
             </div>
 
         <Comments articleId = {article_id} />

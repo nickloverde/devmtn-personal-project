@@ -1,0 +1,27 @@
+@media (max-width: 900px) {
+  .media-preview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .regimg-container {
+    display: none;
+  }
+
+  .register-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .art-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .articleCSS {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

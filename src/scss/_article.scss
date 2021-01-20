@@ -5,6 +5,7 @@
 
 .article-subhead {
   color: $primary-color;
+  padding: 15px;
 }
 
 .article-img {
@@ -42,4 +43,8 @@
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
   width: 90%;
+}
+
+.content-text {
+  line-height: 20px;
 }
