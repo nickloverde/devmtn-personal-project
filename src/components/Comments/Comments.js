@@ -67,7 +67,7 @@ const Comments = (props) => {
     return (
         <div className='comments'>
             <div className='add-comment'>
-                <h5>Please leave your comments here. Remember to be respectful to other subscribers.</h5>
+                <h5>Please leave your comments here. Remember to be respectful to other subscribers. Thank you.</h5>
             </div>
 
             <input
