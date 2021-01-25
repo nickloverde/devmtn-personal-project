@@ -5,9 +5,13 @@
     justify-content: center;
   }
 
-  .media-preview {
+  @mixin mobile-2 {
     display: flex;
     flex-direction: column;
+  }
+
+  .media-preview {
+    @include mobile-2;
   }
 
   .regimg-container {
@@ -15,29 +19,22 @@
   }
 
   .register-container {
-    display: flex;
-    justify-content: center;
+    @include mobile-2;
   }
 
   .art-display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include mobile-1;
   }
 
-  .articleCSS {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  // .articleCSS {
+  //   @include mobile-1;
+  // }
 
   .banner-container {
     display: none;
   }
 
   .article-top-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include mobile-1;
   }
 }
