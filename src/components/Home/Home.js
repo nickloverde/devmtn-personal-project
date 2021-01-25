@@ -71,7 +71,7 @@ const Home = (props) => {
                     }
                     return (
                         <div className = {articleCSS}>
-                            <div>
+                            <div className='art-preview'>
                                 <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
