@@ -26,9 +26,9 @@
     @include mobile-1;
   }
 
-  // .articleCSS {
-  //   @include mobile-1;
-  // }
+  .articleCSS {
+    @include mobile-1;
+  }
 
   .banner-container {
     display: none;
