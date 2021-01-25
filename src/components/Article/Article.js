@@ -40,7 +40,6 @@ const Article = (props) => {
             </div>
 
         <Comments articleId = {article_id} />
-        
         </div>
     )
 }

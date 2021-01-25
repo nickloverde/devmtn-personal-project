@@ -76,10 +76,11 @@ const Home = (props) => {
                         <div className = {articleCSS}>
                             <div>
                                 <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
+                                <div className='art-display'>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
                                     <div className='headline'>{article.headline}</div>
-                                    {/* <div>{article.summary}</div> */}
+                                    </div>
                                 </Link>
                             </div>
                         </div>
@@ -105,9 +106,11 @@ const Home = (props) => {
                         <div className = {articleCSS}>
                             <div>
                                 <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
+                                <div className='art-display'>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
                                     <div className='headline'>{article.headline}</div>
+                                    </div>
                                     {/* <div>{article.summary}</div> */}
                                 </Link>
                             </div>
