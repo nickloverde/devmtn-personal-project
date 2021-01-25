@@ -48,7 +48,6 @@
 }
 
 .toparticle {
-  display: flex;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 30px;
@@ -58,7 +57,6 @@
 }
 
 .subarticle {
-  display: flex;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 0;
@@ -81,9 +79,4 @@
 
 .art-preview {
   display: flex;
-}
-
-.articleCSS {
-  display: flex;
-  flex-direction: column;
 }
