@@ -30,6 +30,11 @@
     @include mobile-1;
   }
 
+  .toparticle {
+    display: flex;
+    flex-direction: column;
+  }
+
   .banner-container {
     display: none;
   }

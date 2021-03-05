@@ -46,12 +46,12 @@ const Home = (props) => {
                             <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                 
                                     <div className='media-preview'>
-                                    <div className='headline'><h1>{article.headline}</h1></div>
-                                    <div>{article.summary}</div>
+                                        <div className='headline'><h1>{article.headline}</h1></div>
+                                        <div>{article.summary}</div>
                                     </div>
 
                                     <div>
-                                    <img className='img-main'src={article.image}/>
+                                        <img className='img-main'src={article.image}/>
                                     </div>
                             </Link>
                         </div>
@@ -64,7 +64,7 @@ const Home = (props) => {
             <div className='tech-section'>
                 {technology.map((article, i) => {
                     let articleCSS = ''
-                    if(i < 0){
+                    if(i < 3){
                         articleCSS = 'toparticle' //need toparticle class in css
                     } else {
                         articleCSS = 'subarticle'
@@ -92,29 +92,6 @@ const Home = (props) => {
             <div className='tech-section'>
                 {lifeStyle.map((article, i) => {
                     let articleCSS = ''
-                    if(i < 0){
-                        articleCSS = 'toparticle'
-                    } else {
-                        articleCSS = 'subarticle'
-                    }
-                    return (
-                        <div className = {articleCSS}>
-                            <div>
-                                <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
-                                    <img className= 'img-sub' src={article.image}/>
-                                    <div className='category'>{article.category}</div>
-                                    <div className='headline'>{article.headline}</div>
-                                    {/* <div>{article.summary}</div> */}
-                                </Link>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-
-            {/* <div className='tech-section'>
-                {lifeStyle.slice(0,3).map((article, i) => {
-                    let articleCSS = ''
                     if(i < 3){
                         articleCSS = 'toparticle'
                     } else {
@@ -126,15 +103,13 @@ const Home = (props) => {
                                 <Link style={{ textDecoration: 'none', color: 'black'}} key={article.article_id} to={`/article/${article.article_id}`}>
                                     <img className= 'img-sub' src={article.image}/>
                                     <div className='category'>{article.category}</div>
-                                    <div>{article.headline}</div>
-                                    <div>{article.summary}</div>
+                                    <div className='headline'>{article.headline}</div>
                                 </Link>
                             </div>
                         </div>
                     )
                 })}
-            </div> */}
-
+            </div>        
         </div>
     )
 }
