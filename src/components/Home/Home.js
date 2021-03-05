@@ -14,14 +14,14 @@ const Home = (props) => {
         .then((res) => {
             setArticles(res.data)
 
-            //make techArticles into an array of objects where all 
+            //make techArticles into an array of objects
             let techArticles = res.data.filter((article)=>{
                 return article.category === 'Technology'
             })
             setTechnology(techArticles)
 
             //ms articles
-            //make techArticles into an array of objects where all 
+            //make lifeArticles into an array of objects
             let lifeArticles = res.data.filter((article)=>{
                 return article.category === 'Lifestyle'
             })
@@ -65,7 +65,7 @@ const Home = (props) => {
                 {technology.map((article, i) => {
                     let articleCSS = ''
                     if(i < 3){
-                        articleCSS = 'toparticle' //need toparticle class in css
+                        articleCSS = 'toparticle'
                     } else {
                         articleCSS = 'subarticle'
                     }
